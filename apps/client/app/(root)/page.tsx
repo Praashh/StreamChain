@@ -58,7 +58,7 @@ export default function Landing() {
           heading={
             <>
               <Link
-                href='https://github.com/100XEnginners/DeZap'
+                href='https://github.com/praashh/streamchain'
                 target='_blank'
                 className='flex items-center justify-center justify-self-center gap-3 rounded-full bg-[#1a1d2d] py-3 px-4 flex-wrap flex-row text-center font-bold text-sm'
               >
@@ -76,16 +76,7 @@ export default function Landing() {
           <div className='flex gap-4 items-center justify-self-center mt-4'>
             <p>Live on</p>
             <Image src={'/solana.svg'} width={42} height={42} alt='Solana' />
-            <Image
-              src={'/ethereum.svg'}
-              width={42}
-              height={42}
-              alt='etherium'
-            />
-            <Image src={'/bnbchain.svg'} width={42} height={42} alt='Bnd' />
-            <Image src={'/aptos.svg'} width={42} height={42} alt='aptos' />
-            <Image src={'/sui.svg'} width={42} height={42} alt='sui' />
-            <Image src={'/polygon.svg'} width={42} height={42} alt='polygon' />
+            Solana Blockchain
           </div>
           <div>
             <Image
@@ -121,12 +112,12 @@ export default function Landing() {
                 Overview
               </h2>
               <h1 className='text-4xl font-semibold'>
-                What Can You Achieve with DEZAP?
+                What Can You Achieve with StreamChain?
               </h1>
             </>
           }
           description={
-            "DEZAP offers powerful tools to easily monitor and manage blockchain transactions. Whether you're a crypto enthusiast, NFT collector, or business in Web3, our platform supports SPL tokens, airdrops, and NFTs with real-time alerts and secure, no-code asset management."
+            "StreamChain offers powerful tools to easily monitor and manage blockchain transactions. Whether you're a crypto enthusiast, NFT collector, or business in Web3, our platform supports SPL tokens, airdrops, and NFTs with real-time alerts and secure, no-code asset management."
           }
         >
           <div className='grid grid-cols-2 gap-16 mt-32'>
@@ -148,13 +139,11 @@ export default function Landing() {
         </Section>
       </div>
       <footer className='text-primary px-12 pt-20 pb-12 bg-[#050505] grid gap-2 justify-items-center'>
-        <Logo />
         <p className='flex items-center gap-1 text-xs'>
-          Made with <Icon icon='heart' color='#7187FF' size={16} /> by DeZap
-          team.
+          Made with <Icon icon='heart' color='#7187FF' size={16} /> for solana community.
         </p>
         <p className='flex items-center gap-1 text-xs'>
-          <Icon icon='copyright' size={14} /> 2024 DeZap.
+          <Icon icon='copyright' size={14} /> 2024 StreamChain.
         </p>
       </footer>
     </div>

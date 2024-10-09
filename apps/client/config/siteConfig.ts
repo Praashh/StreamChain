@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 
-const TITLE = 'DeZap - Airdrop and StreamFlow on Solana';
+const TITLE = 'StreamChain - Stream your transaction with notification';
 const DESCRIPTION =
-  'DeZap is a platform that allows you to airdrop and streamflow on Solana. It is a web3 application that allows you to airdrop and streamflow on Solana.';
+  'StreamChain is a platform that allows you to airdrop and streamflow on Solana. It is a web3 application that allows you to airdrop and Stream on Solana.';
 
-const BASE_URL = 'https://dezap.online';
+const BASE_URL = '';
 
 export const siteConfig: Metadata = {
   title: TITLE,
@@ -12,7 +12,7 @@ export const siteConfig: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-  applicationName: 'DeZap',
+  applicationName: 'StreamChain',
   creator: '100XEngineers',
 
   category: 'Blockchain',
@@ -20,7 +20,7 @@ export const siteConfig: Metadata = {
     canonical: BASE_URL,
   },
   keywords: [
-    'DeZap',
+    'StreamChain',
     'Solana',
     'Airdrop',
     'StreamFlow',
