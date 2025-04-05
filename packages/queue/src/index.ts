@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import prisma from "@repo/db";
 import { NotificationType, UserwithNotifications } from "@repo/db/types";
+import { createClient } from "redis";
 dotenv.config();
 
 export type UserTransactionDataType = {
@@ -15,19 +16,17 @@ export type UserActivityDetailsType = {
   primaryPubKey: string;
   transactionData: UserTransactionDataType;
 };
-import { createClient } from "redis";
-dotenv.config();
 
-const redis = createClient({
-  password: process.env.REDIS_PASSWORD, // revert while pushing
+export const redis = createClient({
+  password: process.env.REDIS_PASSWORD as string || "my_password" ,
   socket: {
-    host: process.env.REDIS_HOST,
-    port: process.env.REDIS_PORT as unknown as number,
+    host: process.env.REDIS_HOST as string || "localhost",
+    port: process.env.REDIS_PORT as unknown as number || 6379 , 
   },
 });
 (async function connectClient() {
   await redis.connect();
-  console.log("connected to redis server");
+  console.log("connected to redis server inside @repo/db");
 })();
 
 export async function pushNotificationInQueue(
@@ -54,16 +53,21 @@ export async function pushNotificationInQueue(
       type: NotificationType;
       channelId: string | null;
     }) => {
-      
-      await redis.lPush(
-        "notifications",
-        JSON.stringify({
-          ...transactionActivity,
-          type: notification.type as NotificationType,
-          notificationId: notification.notificationId, //if type is email then notificationId is the email id, if type is discord then notificationId is the discord id,etc
-          channelId: notification.channelId
-        })
-      );
+      try {
+        const pushedData = await redis.lPush(
+          "notifications",
+          JSON.stringify({
+            ...transactionActivity,
+            type: notification.type as NotificationType,
+            notificationId: notification.notificationId, //if type is email then notificationId is the email id, if type is discord then notificationId is the discord id,etc
+            channelId: notification.channelId
+          })
+        );
+        console.log("pushedData---", pushedData);
+        
+      } catch (error) {
+        console.warn("Error While pushing the transactions into redis", error)
+      }
     }
   );
 }

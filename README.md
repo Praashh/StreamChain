@@ -71,6 +71,17 @@ The client provides the following features:
 
 (Provide information on how the system can be scaled to handle increased load and maintain performance)
 
+
+## Docker setup for redis
+
+```
+docker run -d \
+  --name DEMI \
+  -p 6379:6379 \
+  redis \
+  redis-server --requirepass "my_password"
+```
+
 ## Contributing
 
 All Contributions are welcome ❤️

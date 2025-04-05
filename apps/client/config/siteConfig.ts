@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 
-const TITLE = 'StreamChain - Stream your transaction with notification';
+const TITLE = 'DEMI - Automatically collect your credit/rent using Solana Blockchin';
 const DESCRIPTION =
-  'StreamChain is a platform that allows you to airdrop and streamflow on Solana. It is a web3 application that allows you to airdrop and Stream on Solana.';
+  'StreamChain is a platform that allows shopkeeper to automatically collects their credit from customers using solana blockchain. It is a web3 application that allows you automatically collects your credit from a person using solana blockchain..';
 
-const BASE_URL = '';
+const BASE_URL = process.env.BASE_URL;
 
 export const siteConfig: Metadata = {
   title: TITLE,
@@ -12,22 +12,23 @@ export const siteConfig: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-  applicationName: 'StreamChain',
-  creator: '100XEngineers',
+  applicationName: 'DEMI',
+  creator: 'praash',
 
   category: 'Blockchain',
   alternates: {
     canonical: BASE_URL,
   },
   keywords: [
-    'StreamChain',
+    'DEMI',
     'Solana',
-    'Airdrop',
-    'StreamFlow',
+    'Credit',
+    'Rent',
     'solana transaction',
-    'solana airdrop',
-    'solana streamflow',
+    'solana credit collections',
+    'solana DEMI ren collections',
     'web3',
+    'blockchain'
   ],
-  metadataBase: new URL(BASE_URL),
+  metadataBase: new URL(BASE_URL!),
 };
