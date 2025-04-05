@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-const TITLE = 'DEMI - Automatically collect your credit/rent using Solana Blockchin';
+const TITLE = 'DEMI - Automatically collect your credit/rent using Solana Blockchain';
 const DESCRIPTION =
   'StreamChain is a platform that allows shopkeeper to automatically collects their credit from customers using solana blockchain. It is a web3 application that allows you automatically collects your credit from a person using solana blockchain..';
 
@@ -26,7 +26,7 @@ export const siteConfig: Metadata = {
     'Rent',
     'solana transaction',
     'solana credit collections',
-    'solana DEMI ren collections',
+    'solana DEMI rent collections',
     'web3',
     'blockchain'
   ],
