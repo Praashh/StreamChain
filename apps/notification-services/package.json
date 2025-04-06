@@ -15,15 +15,16 @@
   "description": "",
   "dependencies": {
     "@prisma/client": "^5.19.0",
-    "@repo/db": "*",
     "discord.js": "^14.15.3",
     "dotenv": "^16.4.5",
     "nodemailer": "^6.9.14",
-    "redis": "^4.7.0",
     "telegraf": "^4.16.3",
     "twilio": "^5.2.2"
   },
   "devDependencies": {
+    "@repo/queue": "*",
+    "@repo/db": "*",
+    "@repo/common":"*",
     "tsup": "^8.2.4"
   }
 }

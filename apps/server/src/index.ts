@@ -2,13 +2,13 @@ import express, { Request, Response } from 'express';
 import http from 'http';
 import { WebSocket, WebSocketServer } from 'ws';
 import { addUserToWebHook } from './util/addUserToWebHook';
-import { pushNotificationInQueue, UserActivityDetailsType } from './queue';
 import dotenv from 'dotenv';
 import prisma from '@repo/db';
 import { Prisma } from '@repo/db/types';
 import { getData } from './util/getActivityData';
 import cors from 'cors';
 import { getMetadata } from './util/getMetaData';
+import { pushNotificationInQueue } from '@repo/queue';
 
 dotenv.config();
 
@@ -62,6 +62,7 @@ app.post('/webhook', async (req: Request, res: Response) => {
 
   try {
     const data = await getData(requestBody);
+    console.log("data---", data);
     if (!data) {
       return res.status(500).json({ msg: 'Internal Server Error!' });
     }
@@ -84,6 +85,7 @@ app.post('/webhook', async (req: Request, res: Response) => {
       senderExists,
       receiverExists,
     ]);
+    console.log("-----pushing to redis-----")
 
     if (sender) {
       await pushNotificationInQueue('email', transactionDataSender);
