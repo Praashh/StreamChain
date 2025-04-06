@@ -1,22 +1,26 @@
 {
   "name": "@repo/queue",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsup --watch --onSuccess \"node dist/index.js\"",
+    "build": "tsup"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/node": "^22.14.0",
     "dotenv": "^16.4.7",
-    "redis": "^4.7.0"
+    "redis": "^4.7.0",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.4.0"
   },
   "devDependencies": {
-    "@repo/db": "*"
+    "@repo/db": "*",
+    "tsup": "^8.4.0"
   },
-  "exports":{
+  "exports": {
     ".": "./src/index.ts"
   }
 }
